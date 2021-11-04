@@ -13,9 +13,9 @@ VAR DESCRIPTIONS:
 				of where the player is dashing to
 """
 var velocity
-export var speed = 5
-export var dash_speed = 10
-export var DASH_FRAMES = 15
+export var speed = 150
+export var dash_speed = 300
+export var DASH_FRAMES = 20
 var dash_remain
 var dash_vector
 
@@ -55,9 +55,9 @@ func _process(delta):
 	# checks if player is dashing
 	if(dash_remain > 0):
 		# moves by dash_vector and reduces dash frames remaining
-		move_and_collide(dash_vector)
+		move_and_collide(dash_vector * delta)
 		dash_remain -= 1
 	else:
 		# normal movement
 		handle_key()
-		velocity = move_and_collide(velocity)
+		velocity = move_and_collide(velocity * delta)
