@@ -1,0 +1,3 @@
+[gd_scene format=2]
+
+[node name="TEST_LEVEL" type="Node2D"]
