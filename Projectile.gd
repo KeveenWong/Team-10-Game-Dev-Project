@@ -1,4 +1,23 @@
 extends Area2D
+
+"""
+TO INSTANCE THE PROJECTILE:
+	1. MAKE SURE PROJECTILE IS LOADED IN THE GDSCRIPT File
+		see Player.gd for example
+	2. INSTANCE THE VARIABLE USING var my_var = projectile.instance()
+		replace projectile with whatever you named it in your file
+		you can make my_var anything you want
+		preferably make sure my_var is properly named
+		ie. if fireball: var fireball = projectile.instance()
+	3. CHANGE ANY VARIABLES YOU WANT
+		to change a variable, do my_var.VARNAME = (...)
+		VARNAME can be any variable defined in this file
+		(...) must be of same type as VARNAME
+	4. ADD THIS INSTANCED VAR AS A CHILD OF THE TOPMOST PARENT
+		get_parent().add_child(my_var)
+		make sure you're actually using the topmost parent!!!!!
+"""
+
 """
 VAR DESCRIPTIONS:
 	~~~EXPORT VARS~~~

@@ -18,6 +18,8 @@ export var dash_speed = 300
 export var DASH_FRAMES = 20
 var dash_remain
 var dash_vector
+# FOR TESTING PURPOSES
+var projectile = load("res://Projectile.tscn")
 
 # instances to base values
 func _ready():
@@ -42,6 +44,8 @@ func handle_key():
 	velocity = velocity.normalized() * speed
 	if (Input.is_action_just_pressed("dash")):
 		player_dash()
+	if(Input.is_action_just_pressed("player_shoot")):
+		fire(get_viewport().get_mouse_position())
 
 func player_dash():
 	# The dash vector is calculated by taking the directions to the mouse from the player
@@ -49,6 +53,15 @@ func player_dash():
 	dash_vector = position.direction_to(get_viewport().get_mouse_position())*dash_speed
 	dash_remain = DASH_FRAMES
 	
+
+"""
+TEST FUNCTION FOR INSTANTIATING A FIREBALL FROM PLAYER
+"""
+func fire(mouse_pos):
+	var fireball = projectile.instance()
+	fireball.direction = position.direction_to(mouse_pos)
+	fireball.position = position
+	get_parent().add_child(fireball)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
