@@ -14,8 +14,8 @@ VAR DESCRIPTIONS:
 """
 var velocity
 export var speed = 150
-export var dash_speed = 300
-export var DASH_FRAMES = 20
+export var dash_speed = 600
+export var DASH_FRAMES = 100
 var dash_remain
 var dash_vector
 # FOR TESTING PURPOSES
