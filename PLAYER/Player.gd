@@ -16,8 +16,14 @@ var velocity
 export var speed = 150
 export var dash_speed = 600
 export var DASH_FRAMES = 100
+export var FRICTION = 500
 var dash_remain
 var dash_vector
+
+var animationPlayer = null
+var animationTree = null
+var animationState = null
+
 # FOR TESTING PURPOSES
 var projectile = load("res://Projectile.tscn")
 
@@ -26,6 +32,9 @@ func _ready():
 	velocity = Vector2()
 	dash_vector = Vector2()
 	dash_remain = 0
+	animationPlayer = $AnimationPlayer
+	animationTree = $AnimationTree
+	animationState = animationTree.get("parameters/playback")
 
 # handles key presses
 # more info on dash below
@@ -71,6 +80,13 @@ func _process(delta):
 		move_and_collide(dash_vector * delta)
 		dash_remain -= 1
 	else:
-		# normal movement
 		handle_key()
-		velocity = move_and_collide(velocity * delta)
+		# normal movement
+		if velocity != Vector2.ZERO:
+			animationTree.set("parameters/Idle/blend_position", velocity)
+			animationTree.set("parameters/Run/blend_position", velocity)
+			animationState.travel("Run")
+			velocity = move_and_collide(velocity * delta)
+		else:
+			animationState.travel("Idle")
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
