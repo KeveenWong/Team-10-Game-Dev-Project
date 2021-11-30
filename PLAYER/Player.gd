@@ -13,9 +13,9 @@ VAR DESCRIPTIONS:
 				of where the player is dashing to
 """
 var velocity
-export var speed = 150
-export var dash_speed = 600
-export var DASH_FRAMES = 100
+export var speed = 75
+export var dash_speed = 175
+export var DASH_FRAMES = 10
 export var FRICTION = 500
 var dash_remain
 var dash_vector
@@ -73,7 +73,7 @@ func fire(mouse_pos):
 	get_parent().add_child(fireball)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	# checks if player is dashing
 	if(dash_remain > 0):
 		# moves by dash_vector and reduces dash frames remaining

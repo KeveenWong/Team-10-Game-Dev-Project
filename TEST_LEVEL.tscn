@@ -5,6 +5,3 @@
 [node name="TEST_LEVEL" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-speed = 75
-dash_speed = 175
-DASH_FRAMES = 70

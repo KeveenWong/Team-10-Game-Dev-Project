@@ -14,6 +14,10 @@ config/name="Team10Game"
 run/main_scene="res://TEST_LEVEL.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=320

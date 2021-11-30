@@ -50,7 +50,7 @@ func _ready():
 	count = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	# the function to find the next speed
 	var next_speed = BEGIN_SPEED + cf*pow(base, count)
 	# checks to see if the speed reached the FINAL_SPEED yet
