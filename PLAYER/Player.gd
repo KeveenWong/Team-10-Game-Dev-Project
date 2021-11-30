@@ -44,11 +44,12 @@ func handle_key():
 	if (Input.is_action_pressed("move_up")):
 		velocity.y -= 1
 	if (Input.is_action_pressed("move_down")):
-		velocity.y +=1
+		velocity.y += 1
 	if (Input.is_action_pressed("move_left")):
 		velocity.x -= 1
 	if (Input.is_action_pressed("move_right")):
 		velocity.x += 1
+		
 	# makes sure the direction is normalized in all directions
 	velocity = velocity.normalized() * speed
 	if (Input.is_action_just_pressed("dash")):
@@ -83,10 +84,18 @@ func _physics_process(delta):
 		handle_key()
 		# normal movement
 		if velocity != Vector2.ZERO:
-			animationTree.set("parameters/Idle/blend_position", velocity)
-			animationTree.set("parameters/Run/blend_position", velocity)
-			animationState.travel("Run")
 			velocity = move_and_collide(velocity * delta)
 		else:
-			animationState.travel("Idle")
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+			
+func _process(delta):
+	# rendering animations 
+	handle_key()
+	if velocity != Vector2.ZERO:
+		animationTree.set("parameters/Idle/blend_position", velocity)
+		animationTree.set("parameters/Run/blend_position", velocity)
+		animationState.travel("Run")
+	else:
+		animationState.travel("Idle")
+
+	
