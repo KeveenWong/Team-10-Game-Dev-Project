@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://DialogueDynamic.gd" type="Script" id=1]
+[ext_resource path="res://dialogue_font.tres" type="DynamicFont" id=2]
 
 [node name="DialogueDynamic" type="Panel"]
 anchor_left = 0.5
@@ -24,33 +25,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_clip_content = true
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 8.0
 margin_right = 100.0
-margin_bottom = 14.0
+margin_bottom = 16.0
 rect_clip_content = true
+custom_fonts/font = ExtResource( 2 )
 text = "Dynamic"
 align = 1
 autowrap = true
 
 [node name="Option1" type="Button" parent="VBoxContainer"]
-margin_top = 18.0
+margin_top = 20.0
 margin_right = 100.0
-margin_bottom = 38.0
+margin_bottom = 34.0
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
 text = "..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Option2" type="Button" parent="VBoxContainer"]
-margin_top = 42.0
+margin_top = 38.0
 margin_right = 100.0
-margin_bottom = 62.0
+margin_bottom = 52.0
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
 text = "Goodbye"
 __meta__ = {
 "_edit_use_anchors_": false
