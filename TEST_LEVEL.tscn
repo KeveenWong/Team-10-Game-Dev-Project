@@ -5,13 +5,7 @@
 [node name="TEST_LEVEL" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-<<<<<<< Updated upstream
-=======
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 smoothing_enabled = true
-
-[node name="TEST_DIALOGUE" parent="." instance=ExtResource( 2 )]
-position = Vector2( 173.927, 94.5688 )
->>>>>>> Stashed changes
