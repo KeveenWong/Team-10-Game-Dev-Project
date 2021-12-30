@@ -55,12 +55,12 @@ func handle_key():
 	if (Input.is_action_just_pressed("dash")):
 		player_dash()
 	if(Input.is_action_just_pressed("player_shoot")):
-		fire(get_viewport().get_mouse_position())
+		fire(get_global_mouse_position())
 
 func player_dash():
 	# The dash vector is calculated by taking the directions to the mouse from the player
 	# and multiplies it by the dash_speed
-	dash_vector = position.direction_to(get_viewport().get_mouse_position())*dash_speed
+	dash_vector = position.direction_to(get_global_mouse_position())*dash_speed
 	dash_remain = DASH_FRAMES
 	
 
@@ -69,9 +69,14 @@ TEST FUNCTION FOR INSTANTIATING A FIREBALL FROM PLAYER
 """
 func fire(mouse_pos):
 	var fireball = projectile.instance()
-	fireball.direction = position.direction_to(mouse_pos)
-	fireball.position = position
 	get_parent().add_child(fireball)
+	fireball.global_position = self.global_position
+	fireball.direction = self.global_position.direction_to(mouse_pos)
+	
+	var fireball_rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
+	fireball.rotation = fireball_rotation
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
