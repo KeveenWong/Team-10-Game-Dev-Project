@@ -25,7 +25,7 @@ var animationTree = null
 var animationState = null
 
 # FOR TESTING PURPOSES
-var projectile = load("res://Projectile.tscn")
+var projectile = load("res://SCENES/Projectile.tscn")
 
 # instances to base values
 func _ready():

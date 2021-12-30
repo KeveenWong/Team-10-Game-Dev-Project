@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://PROJECTILES/fireball.png" type="Texture" id=1]
-[ext_resource path="res://Projectile.gd" type="Script" id=2]
+[ext_resource path="res://PROJECTILES/Projectile.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0239, 32.2178 )
@@ -38,5 +38,5 @@ shape = SubResource( 1 )
 position = Vector2( 0.278723, -0.278723 )
 scale = Vector2( 8.03769, 8.03769 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true

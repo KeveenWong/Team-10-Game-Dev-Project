@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PLAYER/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://BACKGROUNDS/cave.png" type="Texture" id=2]
-[ext_resource path="res://BACKGROUNDS/9c779ba1dcb98ed867bbaa5630ea245c.jpg" type="Texture" id=3]
-[ext_resource path="res://BACKGROUNDS/dirt_0.png" type="Texture" id=4]
-[ext_resource path="res://BUILDINGS/house tavern thing.png" type="Texture" id=5]
+[ext_resource path="res://TEMP ASSETS/9c779ba1dcb98ed867bbaa5630ea245c.jpg" type="Texture" id=2]
+[ext_resource path="res://TEMP ASSETS/dirt_0.png" type="Texture" id=3]
+[ext_resource path="res://BUILDINGS/house tavern thing.png" type="Texture" id=4]
+[ext_resource path="res://TEMP ASSETS/cave.png" type="Texture" id=5]
 
 [node name="Cave" type="Node2D"]
 
@@ -13,7 +13,7 @@
 [node name="cave" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 160.055, 67.5958 )
 scale = Vector2( 1.081, 1 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -25,7 +25,7 @@ motion_mirroring = Vector2( 401.892, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 146.877, 62.6215 )
 scale = Vector2( 0.535652, 0.535652 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 276.768, 0 )
@@ -33,7 +33,7 @@ motion_mirroring = Vector2( 276.768, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 19.8906, 157.985 )
 scale = Vector2( 0.115297, 0.115297 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 centered = false
 region_enabled = true
 region_rect = Rect2( -1000, 0, 2460, 200 )
@@ -48,4 +48,4 @@ current = true
 
 [node name="house tavern thing" type="Sprite" parent="."]
 position = Vector2( 81.4608, 141.257 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )

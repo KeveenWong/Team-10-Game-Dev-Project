@@ -1,8 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://PLAYER/Player.tscn" type="PackedScene" id=1]
-<<<<<<< Updated upstream
-=======
+
 [ext_resource path="res://TILESET/Grass.png" type="Texture" id=2]
 >>>>>>> Stashed changes
 
@@ -13,7 +11,3 @@
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 smoothing_enabled = true
-
-[node name="Grass" type="Sprite" parent="."]
-position = Vector2( 1.43507, 1.14977 )
-texture = ExtResource( 2 )
