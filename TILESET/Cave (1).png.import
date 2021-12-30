@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/9c779ba1dcb98ed867bbaa5630ea245c.jpg-fa466e932153c1a603f1e46ac7acee20.stex"
+path="res://.import/Cave (1).png-0062b9685a63b6fd7d8042941138e88b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEMP ASSETS/9c779ba1dcb98ed867bbaa5630ea245c.jpg"
-dest_files=[ "res://.import/9c779ba1dcb98ed867bbaa5630ea245c.jpg-fa466e932153c1a603f1e46ac7acee20.stex" ]
+source_file="res://TILESET/Cave (1).png"
+dest_files=[ "res://.import/Cave (1).png-0062b9685a63b6fd7d8042941138e88b.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

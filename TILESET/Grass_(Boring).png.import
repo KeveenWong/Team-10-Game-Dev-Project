@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cave.png-6abd4833e4a04608df3198c1a5842b6a.stex"
+path="res://.import/Grass_(Boring).png-1206f96ca28895698d0fa04efa2ba587.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEMP ASSETS/cave.png"
-dest_files=[ "res://.import/cave.png-6abd4833e4a04608df3198c1a5842b6a.stex" ]
+source_file="res://TILESET/Grass_(Boring).png"
+dest_files=[ "res://.import/Grass_(Boring).png-1206f96ca28895698d0fa04efa2ba587.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
