@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/house tavern thing.png-699a4a860445d0899a79a00df2b0bd79.stex"
+path="res://.import/house tavern.png-3ad78ccaaef4f4809b067a9c4ca475c5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BUILDINGS/house tavern thing.png"
-dest_files=[ "res://.import/house tavern thing.png-699a4a860445d0899a79a00df2b0bd79.stex" ]
+source_file="res://BUILDINGS/house tavern.png"
+dest_files=[ "res://.import/house tavern.png-3ad78ccaaef4f4809b067a9c4ca475c5.stex" ]
 
 [params]
 
