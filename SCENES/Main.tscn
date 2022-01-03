@@ -1,10 +1,11 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://PLAYER/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TILESET/Grass.png" type="Texture" id=2]
 [ext_resource path="res://TILESET/PathTileset.png" type="Texture" id=3]
 [ext_resource path="res://TILESET/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://Bunny.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BUILDINGS/Tavern.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "PathTileset.png 0"
@@ -641,24 +642,21 @@ color = Color( 1, 0.847059, 0.556863, 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Tavern" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 297.491, 50.094 )
+
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 118.888, 77.5096 )
+position = Vector2( 266.929, 122.867 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 current = true
 smoothing_enabled = true
 
 [node name="Bunny" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 137.795, 58.1459 )
+position = Vector2( 399.859, 163.664 )
 
 [node name="Bunny2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 159.023, 70.2801 )
+position = Vector2( 275.251, 96.1085 )
 
 [node name="Bunny3" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 143.046, 94.6661 )
-
-[node name="Bunny4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 95.9559, 100.552 )
-
-[node name="Bunny5" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 95.5354, 63.553 )
+position = Vector2( 339.279, 93.7212 )

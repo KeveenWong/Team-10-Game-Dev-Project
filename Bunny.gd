@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 var airborne = false
 var timer = 0.0
-var idleDuration = 1.0
+var idleDuration = 3.0
 var jumpPower = 70
 var horizontalJumpPower = 0.8
 var height = 0.0
