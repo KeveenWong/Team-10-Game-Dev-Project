@@ -8,35 +8,44 @@ VAR DESCRIPTIONS:
 						the node (Dialogue)
 			  ~~~LOCAL VARS~~~
 	in_body: checks to see if the player is in the body
-	dialogue: the loaded scene of the static dialogue
-	dia: instance of dialogue
+	dialogue: the loaded scene of the dynamic dialogue
+	dia1: instance of first dialogue
+	dian: instance of nth dialogue
 """
 
 export var interaction_radius = 90
 var in_body = false
-var dialogue = load("res://DialogueStatic.tscn")
-var dia
+var dialogue = load("res://EXAMPLES/DialogueDynamic.tscn")
+var dia1
+var dia2
+var dia3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CollisionShape2D.shape.set_radius(interaction_radius)
-	dia = dialogue.instance()
-	dia.static_text = "This is sample dialogue"
-	add_child(dia)
+	dia1 = dialogue.instance()
+	dia2 = dialogue.instance()
+	dia3 = dialogue.instance()
+	dia1.static_text = "This"
+	dia2.static_text = "is..."
+	dia2.option2 = "I'm Bored"
+	dia3.static_text = "Dynamic!"
+	dia3.option2 = "cool"
+	dia1.next_dialogue = dia2
+	dia2.next_dialogue = dia3
+	add_child(dia1)
 	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if in_body and Input.is_action_just_pressed("interact"):
-		dia.showup()
+		dia1.showup()
 
-
-func _on_TEST_DIALOGUE_body_entered(body):
+func _on_TEST_DYNAMIC_body_entered(body):
 	if body.is_in_group("Player"):
 		in_body = true
 
 
-func _on_TEST_DIALOGUE_body_exited(body):
+func _on_TEST_DYNAMIC_body_exited(body):
 	if body.is_in_group("Player"):
 		in_body = false
+
