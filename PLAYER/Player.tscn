@@ -206,7 +206,9 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
