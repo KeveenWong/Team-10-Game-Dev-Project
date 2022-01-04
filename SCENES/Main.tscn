@@ -1,11 +1,11 @@
 [gd_scene load_steps=99 format=2]
 
-[ext_resource path="res://PLAYER/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TILESET/Grass.png" type="Texture" id=2]
 [ext_resource path="res://TILESET/PathTileset.png" type="Texture" id=3]
 [ext_resource path="res://TILESET/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://PASSIVE CREATURES/Bunny.tscn" type="PackedScene" id=5]
-[ext_resource path="res://BUILDINGS/Tavern.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/Tavern.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/Main.gd" type="Script" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "PathTileset.png 0"
@@ -617,6 +617,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/z_index = 0
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="TavernSpawn" type="Position2D" parent="."]
+position = Vector2( 320.308, 74.9852 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -644,13 +648,6 @@ color = Color( 1, 0.847059, 0.556863, 1 )
 
 [node name="Tavern" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 297.491, 50.094 )
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 266.929, 122.867 )
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-current = true
-smoothing_enabled = true
 
 [node name="Bunny" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 399.859, 163.664 )
