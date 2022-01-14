@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://PASSIVE CREATURES/bunny.png" type="Texture" id=1]
-[ext_resource path="res://Bunny.gd" type="Script" id=2]
+[ext_resource path="res://SCRIPTS/Bunny.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -57,7 +57,11 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=4]
 radius = 2.43308
 
-[node name="Bunny" type="KinematicBody2D"]
+[node name="Bunny" type="KinematicBody2D" groups=[
+"Creature",
+"Passive",
+"Persist",
+]]
 script = ExtResource( 2 )
 
 [node name="Shadow" type="Sprite" parent="."]

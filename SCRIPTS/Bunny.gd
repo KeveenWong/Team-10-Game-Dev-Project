@@ -60,5 +60,4 @@ func _physics_process(delta):
 	timer += delta
 	move_and_collide(Vector2(velocity.x, velocity.z))
 	sprite.position.y = -height
-	print(height)
 

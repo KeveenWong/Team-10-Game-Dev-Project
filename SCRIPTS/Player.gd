@@ -6,7 +6,7 @@ VAR DESCRIPTIONS:
 			  ~~~EXPORT VARS~~~
 	speed: speed of the movement of the character
 	dash_speed: speed of the dash
-	DASH_FRAMES: length of dash (in frames)
+	dash_frames: length of dash (in frames)
 			  ~~~LOCAL VARS~~~
 	dash_remain: the amount of dash frames remaining
 	dash_vector: the direction times the speed of the dash
@@ -15,8 +15,8 @@ VAR DESCRIPTIONS:
 var velocity
 export var speed = 75
 export var dash_speed = 175
-export var DASH_FRAMES = 10
-export var FRICTION = 500
+export var dash_frames = 10
+export var friction = 500
 var dash_remain
 var dash_vector
 
@@ -25,7 +25,7 @@ var animationTree = null
 var animationState = null
 
 # FOR TESTING PURPOSES
-var projectile = load("res://SCENES/Projectile.tscn")
+var projectile = load("res://PROJECTILES/Projectile.tscn")
 
 # instances to base values
 func _ready():
@@ -61,7 +61,7 @@ func player_dash():
 	# The dash vector is calculated by taking the directions to the mouse from the player
 	# and multiplies it by the dash_speed
 	dash_vector = position.direction_to(get_global_mouse_position())*dash_speed
-	dash_remain = DASH_FRAMES
+	dash_remain = dash_frames
 	
 
 """
@@ -76,8 +76,6 @@ func fire(mouse_pos):
 	var fireball_rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
 	fireball.rotation = fireball_rotation
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	# checks if player is dashing
@@ -89,9 +87,9 @@ func _physics_process(delta):
 		handle_key()
 		# normal movement
 		if velocity != Vector2.ZERO:
-			velocity = move_and_collide(velocity * delta)
+			move_and_collide(velocity * delta)
 		else:
-			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+			velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 			
 func _process(delta):
 	# rendering animations 
@@ -102,5 +100,4 @@ func _process(delta):
 		animationState.travel("Run")
 	else:
 		animationState.travel("Idle")
-
 	
