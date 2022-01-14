@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://OBJECTS/Torch_AnimatiTorch_Animation_Side-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://OBJECTS/Torch.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "light"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "lit"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "light"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "lit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+
+[sub_resource type="AnimationNodeStateMachine" id=6]
+states/light/node = SubResource( 3 )
+states/light/position = Vector2( 533, 203 )
+states/lit/node = SubResource( 4 )
+states/lit/position = Vector2( 737, 203 )
+transitions = [ "light", "lit", SubResource( 5 ) ]
+start_node = "light"
+graph_offset = Vector2( -149.227, 0 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=7]
+
+[node name="Torch" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 13
+frame = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/light = SubResource( 1 )
+anims/lit = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 7 )

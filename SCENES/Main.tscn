@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://PLAYER/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TILESET/Grass.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://TILESET/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://Bunny.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BUILDINGS/Tavern.tscn" type="PackedScene" id=6]
+[ext_resource path="res://OBJECTS/Torch.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "PathTileset.png 0"
@@ -638,7 +639,7 @@ tile_data = PoolIntArray( -65534, 0, 0, -65533, 0, 1, -65532, 0, 1, -65531, 0, 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 379.095, -5.33938 )
-color = Color( 1, 0.847059, 0.556863, 1 )
+color = Color( 1, 0.886275, 0.670588, 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -660,3 +661,6 @@ position = Vector2( 275.251, 96.1085 )
 
 [node name="Bunny3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 339.279, 93.7212 )
+
+[node name="Torch" parent="." instance=ExtResource( 7 )]
+position = Vector2( 326.25, -0.75 )
