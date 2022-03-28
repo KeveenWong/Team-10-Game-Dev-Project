@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sp00ky.png-94b233823a9b47293b0d08ebc020e110.stex"
+path="res://.import/clipart1387636.png-44b28fb929cab6d1004f895de337cd43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BACKGROUNDS/sp00ky.png"
-dest_files=[ "res://.import/sp00ky.png-94b233823a9b47293b0d08ebc020e110.stex" ]
+source_file="res://clipart1387636.png"
+dest_files=[ "res://.import/clipart1387636.png-44b28fb929cab6d1004f895de337cd43.stex" ]
 
 [params]
 

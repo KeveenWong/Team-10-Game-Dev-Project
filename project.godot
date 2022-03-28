@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Team10Game"
-run/main_scene="res://SCENES/Cave.tscn"
+run/main_scene="res://SCENES/jungle.tscn"
 config/icon="res://icon.png"
 
 [debug]

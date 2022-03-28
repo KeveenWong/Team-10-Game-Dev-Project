@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sp00ky.png-94b233823a9b47293b0d08ebc020e110.stex"
+path="res://.import/far.png-da653f557b6457225ae7b866f71cf78a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BACKGROUNDS/sp00ky.png"
-dest_files=[ "res://.import/sp00ky.png-94b233823a9b47293b0d08ebc020e110.stex" ]
+source_file="res://BACKGROUNDS/far.png"
+dest_files=[ "res://.import/far.png-da653f557b6457225ae7b866f71cf78a.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
