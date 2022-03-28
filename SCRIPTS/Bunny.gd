@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
+var rng = RandomNumberGenerator.new()
 var airborne = false
 var timer = 0.0
-var idleDuration = 3.0
 var jumpPower = 70
 var horizontalJumpPower = 0.8
 var height = 0.0
@@ -20,11 +20,13 @@ func _ready():
 	velocity = Vector3() 
 	animationPlayer = $AnimationPlayer
 	sprite = $Sprite
+	rng.randomize()
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var idleDuration = rng.randf_range(2.0, 4.0)
 	if airborne:
 		height += velocity.y * delta
 		if (height <= 0):
